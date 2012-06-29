@@ -1,4 +1,12 @@
+from collections import namedtuple
+
 from gi.repository import Gtk
+
+
+# drawing primites
+Point = namedtuple('Point', ['x', 'y'])
+Dimension = namedtuple('Dimension', ['w', 'y'])
+Rectangle = namedtuple('Rectangle', ['x', 'y', 'w', 'h'])
 
 
 class PhysicalKeyboardDescription(object):
