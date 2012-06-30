@@ -107,5 +107,6 @@ class Key(object):
                                    self.shape)
 
 
-kb = PhysicalKeyboard.from_xml(sys.stdin)
-print kb
+if __name__ == '__main__':
+    kb = PhysicalKeyboard.from_xml(sys.stdin)
+    print kb
