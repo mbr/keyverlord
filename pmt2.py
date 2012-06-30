@@ -1,4 +1,4 @@
-from pymeta.grammar import OMeta
+from pymeta.grammar import OMetaGrammar
 from pymeta.runtime import ParseError
 
 from PySide import QtCore
@@ -6,29 +6,61 @@ from PySide import QtCore
 import sys
 
 
+# primitives
 definition = """
-name = (letter | "_"):c (letterOrDigit | "_" | "-")*:cs     -> c + ''.join(cs)
-ls = (" " | "\t")*
+escaped_char = '\\\\' ('"' | '\\\\'):c
+  -> c
+name = (letter | "_"):c (letterOrDigit | "-")*:cs
+  -> c + ''.join(cs)
+word_string = (~' ' anything)*:w
+  -> ''.join(w)
+string = '"' (escaped_char | ~('"') anything)*:cs '"'
+  -> ''.join(cs)
+any_string = (string | word_string)
+basic_int =  digit+:ds
+  -> int(''.join(ds), 10)
+float = digit+:fs '.' digit+:ss
+  -> float(''.join(fs + ['.'] + ss))
+eol_string = (~vspace anything)*:cs
+  -> ''.join(cs).strip()
 
-header = ls name:k ls ":" ls (~"\n" anything)*:cs           -> (k, ''.join(cs))
-header_line = header:h "\n"                                 -> h
-headers = header_line*:hs                                    -> hs
-
-integer = digit+:ds                                  -> int(''.join(ds), 10)
-word_string = (~' ' anything)*:w                     -> ''.join(w)
-rect = "rect" ls tuple4:t                             -> QRect(*t)
-shape = rect
-float = (digit+ "." digit+):f                      -> float(''.join(f))
-tuple2 = "(" ls float:a ls float:b ls ")"              -> (a, b)
-tuple4 = "(" ls float:a ls float:b ls float:c ls float:d ls ")"
+tuple2 = '(' hspace* float:a hspace* float:b hspace* ')'
+  -> (a, b)
+point = tuple2:t
+  -> QPointF(*t)
+tuple4 = '(' hspace* float:a hspace* float:b hspace*\
+         float:c hspace* float:d hspace* ')'
   -> (a, b, c, d)
+"""
 
-rule = integer:k ls word_string:l ls shape:s
-  -> {'keycode': k, 'label': l, 'shape': s}
-rule_line = rule:r "\n"                                   -> r
-rules = rule_line*:rs                                    -> rs
+# shapes
+definition += """
+rect = "rect" hspace* tuple4:t
+  -> QRectF(*t)
+shape = rect
+"""
 
-grammar = headers:hs "\n" rules:rs spaces end                  -> (hs, rs)
+# main stuff
+definition += """
+header_line = hspace* name:k hspace* ':' hspace*\
+              (float|basic_int|eol_string):v hspace* vspace
+  -> (k, v)
+headers = header_line*:hs
+  -> dict(hs)
+
+rule = basic_int:k (hspace* ~shape any_string)*:ls hspace* shape:s
+  -> Rule(k, ls, s)
+row_key = hspace* basic_int:k (hspace* string)+:ls hspace* float?:f
+  -> (k, ls, f)
+row_rule = "row" hspace* point:rc row_key:k1 (',' row_key)*:ks
+  -> RowRule(rc, [k1] + ks)
+rule_line = (rule | row_rule):r vspace
+  -> r
+rules = rule_line*:rs
+  -> rs
+
+grammar = headers:hs emptyline rules:rs spaces end
+  -> PhysicalKeyboard(hs, rs)
 """
 
 
@@ -65,6 +97,7 @@ def preprocess(src):
         c = rd.next()
 
         if '\\' == c:
+            yield '\\'
             yield rd.next()
         elif '"' == c:
             inside_string = not inside_string
@@ -79,13 +112,111 @@ def preprocess(src):
             yield c
 
 
-Grammar = OMeta.makeGrammar(definition, {'QRect': QtCore.QRect})
+class Rule(object):
+    def __init__(self, keycode, labels, shape):
+        self.keycode = keycode
+        self.labels = labels
+        self.shape = shape
+
+    def to_keys(self, kb):
+        return [Key(self.keycode, self.labels, self.shape)]
+
+    def __repr__(self):
+        return '%s(%r, %r, %r)' % (self.__class__.__name__,
+                                   self.keycode,
+                                   self.labels,
+                                   self.shape)
+
+
+class RowRule(object):
+    def __init__(self, coords, row_keys):
+        self.coords = coords
+        self.row_keys = row_keys
+
+    def to_keys(self, kb):
+        def_height = kb.get_conf('default-key-height')
+        def_width = kb.get_conf('default-key-width')
+        def_gap = kb.get_conf('default-key-gap')
+        ks = []
+
+        cur_offset = 0
+        for i, (keycode, labels, key_width) in enumerate(self.row_keys):
+            w = key_width or def_width
+            shape = QtCore.QRectF(
+                self.coords + QtCore.QPointF(cur_offset, 0),
+                QtCore.QSizeF(def_height, w)
+            )
+            ks.append(Key(keycode, labels, shape))
+            cur_offset += def_gap + w
+        return ks
+
+    def __repr__(self):
+        return '%s(%r, %r)' % (self.__class__.__name__,
+                               self.coords,
+                               self.row_keys)
+
+
+class PhysicalKeyboard(object):
+    default_headers = {
+        'name': 'Unnamed keyboard',
+        'default-key-gap': 0.1,
+        'default-key-width': 1.8,
+        'default-key-height': 1.8
+    }
+
+    def __init__(self, headers, rules):
+        self.headers = headers
+        self.rules = rules
+
+        self.update_keys()
+
+    def get_conf(self, k):
+        try:
+            return self.headers[k]
+        except KeyError:
+            return self.default_headers[k]
+
+    def update_keys(self):
+        self.keys = []
+        for rule in self.rules:
+            self.keys.extend(rule.to_keys(self))
+
+    def __repr__(self):
+        return '%s(%r, %r)' % (self.__class__.__name__,
+                               self.headers,
+                               self.rules)
+
+
+class Key(object):
+    def __init__(self, keycode, labels, shape):
+        self.keycode = keycode
+        self.labels = labels
+        self.shape = shape
+
+    def __repr__(self):
+        return '%s(%r, %r, %r)' % (self.__class__.__name__,
+                                   self.keycode,
+                                   self.labels,
+                                   self.shape)
+
+
+Grammar = OMetaGrammar.makeGrammar(definition, {
+    'QRectF': QtCore.QRectF,
+    'QPointF': QtCore.QPointF,
+    'Rule': Rule,
+    'RowRule': RowRule,
+    'PhysicalKeyboard': PhysicalKeyboard
+})
 
 
 try:
     buf = ''.join(preprocess(sys.stdin.read()))
     print buf
     print '*' * 20
-    print repr(Grammar.parse(buf))
+    kb = Grammar.parse(buf)
+    print repr(kb)
+    print
+    for k in kb.keys:
+        print k
 except ParseError, e:
     print e
