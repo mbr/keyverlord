@@ -1,0 +1,32 @@
+<physical-keyboard>
+    <head>
+        <conf name="name">Filco Majestouch</conf>
+        <conf name="default-key-gap">0.1</conf>
+    </head>
+
+    <keys>
+        <key keycode="1">
+            <label>Tab</label>
+            <label>Foo</label>
+            <shape>
+                <!-- w and h omitted, see default-key-width -->
+                <rect x="0.1" y="0.2"/>
+            </shape>
+        </key>
+
+        <row x="1.0" y="6.5">
+            <key keycode="4">
+                <label>CapsLock</label>
+                <shape>
+                    <rect w="2.0"/>
+                </shape>
+            </key>
+            <key keycode="5">
+                <label>A</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+    </keys>
+</physical-keyboard>
