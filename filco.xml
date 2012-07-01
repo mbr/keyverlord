@@ -7,24 +7,131 @@
     </head>
 
     <keys>
-        <key keycode="1">
-            <label>Tab</label>
-            <label>Foo</label>
+    <!--
+        <key keycode="">
+            <label></label>
             <shape>
-                <!-- w and h omitted, see default-key-width -->
-                <rect x="0.1" y="0.2"/>
+                <rect x="" y=""/>
+            </shape>
+        </key>
+    -->
+
+    <!--
+        <row x="" y="">
+            <key keycode="">
+                <label></label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+    -->
+
+        <key keycode="1">
+            <label>ESC</label>
+            <shape>
+                <rect x="0.5" y="0.5"/>
             </shape>
         </key>
 
-        <row x="1.0" y="6.5">
-            <key keycode="4">
-                <label>CapsLock</label>
+        <row x="4.35" y="0.5">
+            <key keycode="59">
+                <label>F1</label>
                 <shape>
-                    <rect w="2.0"/>
+                    <rect/>
                 </shape>
             </key>
-            <key keycode="5">
-                <label>A</label>
+            <key keycode="60">
+                <label>F2</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="61">
+                <label>F3</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="62">
+                <label>F4</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+
+        <row x="12.9" y="0.5">
+            <key keycode="63">
+                <label>F5</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="64">
+                <label>F6</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="65">
+                <label>F7</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="66">
+                <label>F8</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+
+        <row x="21.4" y="0.5">
+            <key keycode="67">
+                <label>F9</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="68">
+                <label>F10</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="87">
+                <label>F11</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="88">
+                <label>F12</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+
+        <row x="29.5" y="0.5">
+            <key keycode="99">
+                <label>Print&#xA;Screen</label>
+                <label>Sys Rq</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="70">
+                <label>Scroll&#xA;Lock</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="119">
+                <label>Pause</label>
+                <label>Break</label>
                 <shape>
                     <rect/>
                 </shape>
