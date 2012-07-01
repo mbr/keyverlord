@@ -4,6 +4,8 @@
         <conf name="default-key-gap">0.1</conf>
         <conf name="keyboard-width">44.0</conf>
         <conf name="keyboard-height">13.6</conf>
+        <conf name="default-key-height">1.8</conf>
+        <conf name="default-key-width">1.8</conf>
     </head>
 
     <keys>
