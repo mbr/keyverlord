@@ -11,7 +11,6 @@ def first_valid(*args):
 
 
 def read_xml_shape(elem, context={}):
-
     if elem.tag == 'rect':
         x = float(first_valid(elem.attrib.get('x'), context.get('rect-x')))
         y = float(first_valid(elem.attrib.get('y'), context.get('rect-y')))
@@ -36,7 +35,9 @@ class PhysicalKeyboard(object):
         'name': u'Unnamed keyboard',
         'default-key-gap': 0.1,
         'default-key-width': 1.8,
-        'default-key-height': 1.8
+        'default-key-height': 1.8,
+        'keyboard-width': 10.0,
+        'keyboard-height': 10.0,
     }
 
     def __init__(self, headers, keys):
@@ -44,6 +45,12 @@ class PhysicalKeyboard(object):
         self.keys = keys
 
         self.update_keys()
+
+    def get_rect(self):
+        return QtCore.QRectF(0.0,
+                             0.0,
+                             self.headers['keyboard-width'],
+                             self.headers['keyboard-height'])
 
     def update_keys(self):
         self._keycode_keys = {key.keycode: key for key in self.keys}

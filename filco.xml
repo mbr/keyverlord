@@ -2,6 +2,8 @@
     <head>
         <conf name="name">Filco Majestouch</conf>
         <conf name="default-key-gap">0.1</conf>
+        <conf name="keyboard-width">44.0</conf>
+        <conf name="keyboard-height">13.6</conf>
     </head>
 
     <keys>
