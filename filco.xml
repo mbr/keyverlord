@@ -29,6 +29,7 @@
         </row>
     -->
 
+        <!-- top row -->
         <key keycode="1">
             <label>ESC</label>
             <shape>
@@ -139,5 +140,241 @@
                 </shape>
             </key>
         </row>
+
+        <!-- first row -->
+        <row x="0.5" y="3.3">
+            <key keycode="41">
+                <label>~</label>
+                <label>`</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="2">
+                <label>!</label>
+                <label>1</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="3">
+                <label>@</label>
+                <label>2</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="4">
+                <label>#</label>
+                <label>3</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="5">
+                <label>$</label>
+                <label>4</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="6">
+                <label>%</label>
+                <label>5</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="7">
+                <label>^</label>
+                <label>6</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="8">
+                <label>&amp;</label>
+                <label>7</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="9">
+                <label>*</label>
+                <label>8</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="10">
+                <label>(</label>
+                <label>9</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="11">
+                <label>)</label>
+                <label>0</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="12">
+                <label>_</label>
+                <label>-</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="13">
+                <label>+</label>
+                <label>=</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="14">
+                <label>Backspace</label>
+                <shape>
+                    <rect w="3.6"/>
+                </shape>
+            </key>
+        </row>
+
+        <!-- second row -->
+        <row x="0.5" y="5.2">
+            <key keycode="15">
+                <label>Tab</label>
+                <shape>
+                    <rect w="2.7"/>
+                </shape>
+            </key>
+            <key keycode="16">
+                <label>Q</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="17">
+                <label>W</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="18">
+                <label>E</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="19">
+                <label>R</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="20">
+                <label>T</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="21">
+                <label>Y</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="22">
+                <label>U</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="23">
+                <label>I</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="24">
+                <label>O</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="25">
+                <label>P</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="26">
+                <label>{</label>
+                <label>[</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="27">
+                <label>}</label>
+                <label>]</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="43">
+                <label>|</label>
+                <label>\</label>
+                <shape>
+                    <rect w="2.7"/>
+                </shape>
+            </key>
+        </row>
+
+        <!-- insert/del/home/end/pg block -->
+        <row x="29.5" y="3.3">
+            <key keycode="110">
+                <label>Insert</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="102">
+                <label>Home</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="104">
+                <label>Page&#xA;Up</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+
+        <row x="29.5" y="5.2">
+            <key keycode="111">
+                <label>Delete</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="107">
+                <label>End</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="109">
+                <label>Page&#xA;Down</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
     </keys>
+
 </physical-keyboard>
