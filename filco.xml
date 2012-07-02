@@ -496,6 +496,58 @@
             </key>
         </row>
 
+        <!-- fifth row -->
+        <row x="0.5" y="10.9">
+            <key keycode="29">
+                <label>Ctrl</label>
+                <shape>
+                    <rect w="2.25"/>
+                </shape>
+            </key>
+            <key keycode="125">
+                <label>Win</label>
+                <shape>
+                    <rect w="2.25"/>
+                </shape>
+            </key>
+            <key keycode="56">
+                <label>Alt</label>
+                <shape>
+                    <rect w="2.25"/>
+                </shape>
+            </key>
+            <key keycode="57">
+                <label>Space</label>
+                <shape>
+                    <rect w="11.85"/>
+                </shape>
+            </key>
+            <key keycode="100">
+                <label>Alt</label>
+                <shape>
+                    <rect w="2.25"/>
+                </shape>
+            </key>
+            <key keycode="126">
+                <label>Win</label>
+                <shape>
+                    <rect w="2.25"/>
+                </shape>
+            </key>
+            <key keycode="127">
+                <label>Menu</label>
+                <shape>
+                    <rect w="2.25"/>
+                </shape>
+            </key>
+            <key keycode="97">
+                <label>Ctrl</label>
+                <shape>
+                    <rect w="2.25"/>
+                </shape>
+            </key>
+        </row>
+
         <!-- insert/del/home/end/pg block -->
         <row x="29.5" y="3.3">
             <key keycode="110">
