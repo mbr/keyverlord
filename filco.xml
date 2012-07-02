@@ -333,6 +333,90 @@
             </key>
         </row>
 
+        <!-- third row -->
+        <row x="0.5" y="7.1">
+            <key keycode="58">
+                <label>CapsLock</label>
+                <shape>
+                    <rect w="3.2"/>
+                </shape>
+            </key>
+            <key keycode="30">
+                <label>A</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="31">
+                <label>S</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="32">
+                <label>D</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="33">
+                <label>F</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="34">
+                <label>G</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="35">
+                <label>H</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="36">
+                <label>J</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="37">
+                <label>K</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="38">
+                <label>L</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="39">
+                <label>:</label>
+                <label>;</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="40">
+                <label>"</label>
+                <label>'</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="28">
+                <label>Enter</label>
+                <shape>
+                    <rect w="4.1"/>
+                </shape>
+            </key>
+        </row>
+
         <!-- insert/del/home/end/pg block -->
         <row x="29.5" y="3.3">
             <key keycode="110">
