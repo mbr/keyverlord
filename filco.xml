@@ -590,6 +590,158 @@
                 </shape>
             </key>
         </row>
+
+        <!-- arrow keys -->
+        <key keycode="103">
+            <label>Up</label>
+            <shape>
+                <rect x="31.4" y="9.0"/>
+            </shape>
+        </key>
+        <row x="29.5" y="10.9">
+            <key keycode="105">
+                <label>Left</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="108">
+                <label>Down</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="106">
+                <label>Right</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+
+        <!-- numpad -->
+        <row x="35.7" y="3.3">
+            <key keycode="69">
+                <label>Num&#xA;Lock</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="98">
+                <label>/</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="55">
+                <label>*</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="74">
+                <label>-</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+        <row x="35.7" y="5.2">
+            <key keycode="71">
+                <label>7</label>
+                <label>Home</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="72">
+                <label>8</label>
+                <label>Up</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="73">
+                <label>9</label>
+                <label>Pg Up</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+        <key keycode="78">
+            <label>+</label>
+            <shape>
+                <rect x="41.4" y="5.2" h="3.7"/>
+            </shape>
+        </key>
+        <row x="35.7" y="7.1">
+            <key keycode="75">
+                <label>4</label>
+                <label>Left</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="76">
+                <label>5</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="77">
+                <label>6</label>
+                <label>Right</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+        <row x="35.7" y="9.0">
+            <key keycode="79">
+                <label>1</label>
+                <label>End</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="80">
+                <label>2</label>
+                <label>Down</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="81">
+                <label>3</label>
+                <label>Pg Down</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
+        <key keycode="96">
+            <label>Enter</label>
+            <shape>
+                <rect x="41.4" y="9.0" h="3.7"/>
+            </shape>
+        </key>
+        <row x="35.7" y="10.9">
+            <key keycode="82">
+                <label>0</label>
+                <label>Ins</label>
+                <shape>
+                    <rect w="3.7"/>
+                </shape>
+            </key>
+            <key keycode="83">
+                <label>.</label>
+                <label>Del</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+        </row>
     </keys>
 
 </physical-keyboard>
