@@ -417,6 +417,85 @@
             </key>
         </row>
 
+        <!-- fourth row -->
+        <row x="0.5" y="9.0">
+            <key keycode="42">
+                <label>Shift</label>
+                <shape>
+                    <rect w="4.2"/>
+                </shape>
+            </key>
+            <key keycode="44">
+                <label>Z</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="45">
+                <label>X</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="46">
+                <label>C</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="47">
+                <label>V</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="48">
+                <label>B</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="49">
+                <label>N</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="50">
+                <label>M</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="51">
+                <label>&lt;</label>
+                <label>,</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="52">
+                <label>&gt;</label>
+                <label>.</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="53">
+                <label>?</label>
+                <label>/</label>
+                <shape>
+                    <rect/>
+                </shape>
+            </key>
+            <key keycode="54">
+                <label>Shift</label>
+                <shape>
+                    <rect w="5.0"/>
+                </shape>
+            </key>
+        </row>
+
         <!-- insert/del/home/end/pg block -->
         <row x="29.5" y="3.3">
             <key keycode="110">
